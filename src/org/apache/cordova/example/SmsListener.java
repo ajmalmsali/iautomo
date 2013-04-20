@@ -26,7 +26,7 @@ public class SmsListener extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		int j = 0;
 
-		Toast.makeText(context, "hello", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(context, "hello", Toast.LENGTH_SHORT).show();
 		int length = 0 ;//= DbClass.len;
 		String Action1[][] = new String[10][4];
 
@@ -46,7 +46,7 @@ public class SmsListener extends BroadcastReceiver {
 		String appState = null;
 		DbClass get = new DbClass(context);
 		get.open();
-		Log.d("query", "open");
+		//Log.d("query", "open");
 		do {
 			try {
 				char tmp;

@@ -15,12 +15,12 @@ public class BootCompleteBroadcaste extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
 		j = 0;
-		Log.d("boot", "booted");
+		//Log.d("boot", "booted");
 
-		Toast.makeText(context, "helloBooted", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(context, "helloBooted", Toast.LENGTH_SHORT).show();
 		DbClass get = new DbClass(context);
 		get.open();
-		Log.d("query", "open");
+		//Log.d("query", "open");
 		do {
 
 			
@@ -33,9 +33,8 @@ public class BootCompleteBroadcaste extends BroadcastReceiver {
 				if (appState.contentEquals("on")) {
 
 					doAction(Action1[j][1], Action1[j][3], context);
-					Log.d("Booted", Action1[j][0] + "/" + Action1[j][1] + "/"
-							+ Action1[j][2] + "/" + Action1[j][3]);// action
-																	// value
+					//Log.d("Booted", Action1[j][0] + "/" + Action1[j][1] + "/"		+ Action1[j][2] + "/" + Action1[j][3]);// action
+																	
 
 				}
 
@@ -50,7 +49,7 @@ public class BootCompleteBroadcaste extends BroadcastReceiver {
 
 	private void doAction(String actionType, String actionValue, Context context) {
 		// TODO Auto-generated method stub
-		Log.d("appId", appid + "");
+		//Log.d("appId", appid + "");
 		if (actionType.contentEquals("Change_profile")) {
 			Intent profile = new Intent(context,
 					ChangeProfileActionActivity.class);
@@ -92,7 +91,7 @@ public class BootCompleteBroadcaste extends BroadcastReceiver {
 
 			} catch (Exception e) {
 				// TODO: handle exception
-				Log.d("cannot fetch msgbody or number", "error");
+				//Log.d("cannot fetch msgbody or number", "error");
 				obj.close();
 			}
 			obj.close();

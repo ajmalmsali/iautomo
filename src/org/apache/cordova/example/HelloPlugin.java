@@ -23,8 +23,7 @@ public class HelloPlugin extends Plugin {
 	public String appList;
 
 	public PluginResult execute(String action, JSONArray data, String callbackId) {
-		Log.d("HelloPlugin",
-				"Hello, this is a native function called from PhoneGap/Cordova!");
+		//Log.d("HelloPlugin","Hello, this is a native function called from PhoneGap/Cordova!");
 		Context context = this.cordova.getActivity()
 				.getApplicationContext();
 					Intent intent = new Intent(context, SqlAccess.class);
@@ -58,7 +57,7 @@ public class HelloPlugin extends Plugin {
 			String dat = obj1.getData();
 			obj1.close();
 			Log.e("from db", dat);*/
-	Log.e("jason data passed", data.toString());
+	//Log.e("jason data passed", data.toString());
 			String pData= data.toString();
 			obj1.close();
 				intent.putExtra("json", pData);
@@ -67,7 +66,7 @@ public class HelloPlugin extends Plugin {
 				return new PluginResult(PluginResult.Status.OK,
 						"Yay, Successfullly created!!!");
 		} else if (UPDATE_ACTION_STRING.equals(action)) {
-			Log.e("in for updation", data.toString());
+			//Log.e("in for updation", data.toString());
 			String pData = null;
 			String appId = null;
 			try {
@@ -78,8 +77,8 @@ public class HelloPlugin extends Plugin {
 				e.printStackTrace();
 			}
 			
-			Log.e("pData", pData);
-			Log.e("appId", appId);
+			//Log.e("pData", pData);
+			//Log.e("appId", appId);
 			intent.putExtra("json", pData);
 			intent.putExtra("appId", appId);
 			    intent.putExtra("action", "update");
@@ -90,11 +89,11 @@ public class HelloPlugin extends Plugin {
 			}
 		else if (DELETE_ACTION_STRING.equals(action)) {
 			String resultType = null;//appid used for deletion
-			Log.d("passed data to delete", data.toString());
+			//Log.d("passed data to delete", data.toString());
 			try {
 				resultType = data.getString(0);
 			} catch (Exception ex) {
-				Log.d("HelloPlugin delete exception", ex.toString());
+				//Log.d("HelloPlugin delete exception", ex.toString());
 			}				
 			obj1.close();
 				intent.putExtra("action", "delete");
@@ -107,7 +106,6 @@ public class HelloPlugin extends Plugin {
 			   
 				String dat = obj1.getData();
 				obj1.close();
-				Log.e("hello plugin data", dat);
 				return new PluginResult(PluginResult.Status.OK,
 						dat);
 		}
@@ -116,7 +114,7 @@ public class HelloPlugin extends Plugin {
 			try {
 				resultType = data.getString(0);
 			} catch (Exception ex) {
-				Log.d("HelloPlugin error", ex.toString());
+				//Log.d("HelloPlugin error", ex.toString());
 			}				
 			
 			String dat = obj1.getData(Integer.parseInt(resultType));

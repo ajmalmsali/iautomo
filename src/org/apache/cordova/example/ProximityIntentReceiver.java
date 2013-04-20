@@ -20,7 +20,7 @@ public class ProximityIntentReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Bundle b = intent.getExtras();
-		LOG.d("appId",b.getString("appId") );
+		//LOG.d("appId",b.getString("appId") );
 		int appId = Integer.parseInt(b.getString("appId"));
 		
 		DbClass obj = new DbClass(context);

@@ -21,7 +21,7 @@ public class DevicePolicyDemoActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.d(TAG, "on create Device policy");
+		//Log.d(TAG, "on create Device policy");
 		// Initialize Device Policy Manager service and our receiver class
 		devicePolicyManager = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
 		demoDeviceAdmin = new ComponentName(this, DemoDeviceAdminReceiver.class);
@@ -32,7 +32,7 @@ public class DevicePolicyDemoActivity extends Activity {
 		startActivity(intent);
 
 		Toast.makeText(this, "Locking device...", Toast.LENGTH_LONG).show();
-		Log.d(TAG, "Locking device now");
+		//Log.d(TAG, "Locking device now");
 		devicePolicyManager.lockNow();
 		finish();
 

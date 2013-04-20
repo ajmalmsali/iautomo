@@ -14,13 +14,13 @@ public class SendSMS extends Activity {
 		Bundle b = getIntent().getExtras();
 		String number = b.getString("number");
 		String msgbody = b.getString("body");
-		Log.d(number, msgbody);
+		//Log.d(number, msgbody);
 
 		SmsManager sms = SmsManager.getDefault();
 
 		sms.sendTextMessage(number, null, msgbody, null, null);
 
-		Log.d("action", "sendingSms");
+		//Log.d("action", "sendingSms");
 		finish();
 
 	}
